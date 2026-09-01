@@ -18,7 +18,7 @@ This repository contains the official Summer Internship documentation submitted 
 | **Semester / Section** | 7th Semester — 4CSE3 |
 | **University** | IILM University, Greater Noida |
 | **Internship Title** | AI Placement System |
-| **Organization** | *<DIGISAMAKSH PRIVATE LIMITED >* |
+| **Organization** | *<ADD  DIGISAMAKSH PRIVATE LIMITED >* |
 | **Internship Duration** | *<01-06-2026> – <15-08-2026>* |
 
  
