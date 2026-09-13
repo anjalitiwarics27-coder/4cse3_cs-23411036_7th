@@ -3,24 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Setu — Find work that fits, not just work that's open</title>
+<title>Anjali Tiwari — Internship Documentation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1A2036;
-    --ink-soft:#4A4F68;
-    --paper:#F6F4EF;
-    --paper-raised:#FFFFFF;
-    --line:#DCD8CC;
-    --moss:#3C6E52;
-    --moss-deep:#2A4E3B;
-    --clay:#C9622E;
-    --radius:4px;
+    --paper:#F5F2EC;
+    --panel:#FFFFFF;
+    --ink:#1E2233;
+    --ink-soft:#5B5F72;
+    --line:#DFDACD;
+    --navy:#1C2B4A;
+    --gold:#B8873A;
+    --gold-soft:#EFE3C9;
+    --radius:6px;
   }
- 
   *{box-sizing:border-box; margin:0; padding:0;}
- 
   body{
     background:var(--paper);
     color:var(--ink);
@@ -28,574 +26,282 @@
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
- 
-  h1,h2,h3, .serif{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    color:var(--ink);
-    letter-spacing:-0.01em;
-  }
- 
+  .serif{font-family:'Fraunces', serif;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
   a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
  
-  .wrap{
-    max-width:1180px;
-    margin:0 auto;
-    padding:0 32px;
-  }
+  .wrap{max-width:980px; margin:0 auto; padding:0 32px;}
  
   /* ---------- Header ---------- */
   header{
     border-bottom:1px solid var(--line);
-    background:var(--paper);
-    position:sticky;
-    top:0;
-    z-index:50;
+    padding:26px 0;
   }
   .header-row{
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    padding:20px 32px;
-  }
-  .logo{
-    font-family:'Fraunces', serif;
-    font-size:22px;
-    font-weight:600;
-    display:flex;
     align-items:center;
-    gap:8px;
   }
-  .logo-mark{
-    width:26px; height:26px;
-    background:var(--moss);
-    border-radius:50% 50% 50% 4px;
-    display:inline-block;
+  .brand{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
   }
-  nav{display:flex; gap:36px; font-size:15px;}
-  nav a{color:var(--ink-soft); transition:color .15s;}
-  nav a:hover{color:var(--ink);}
-  .header-actions{display:flex; align-items:center; gap:18px;}
-  .btn{
-    display:inline-block;
-    padding:11px 22px;
-    border-radius:var(--radius);
-    font-size:14.5px;
-    font-weight:600;
-    cursor:pointer;
-    border:1px solid transparent;
-    transition:transform .12s ease, background .15s ease;
+  .brand b{color:var(--navy);}
+  .status-pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:#3C6E52;
+    background:#E7EFE9;
+    padding:6px 14px;
+    border-radius:20px;
   }
-  .btn-primary{background:var(--moss); color:#fff;}
-  .btn-primary:hover{background:var(--moss-deep);}
-  .btn-ghost{color:var(--ink); border-color:var(--line);}
-  .btn-ghost:hover{border-color:var(--ink);}
  
-  /* ---------- Hero ---------- */
-  .hero{
-    padding:88px 0 96px;
-    border-bottom:1px solid var(--line);
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:64px;
-    align-items:center;
-  }
+  /* ---------- Hero / student block ---------- */
+  .hero{padding:56px 0 44px;}
   .eyebrow{
-    font-size:14.5px;
-    color:var(--moss-deep);
-    font-weight:600;
-    margin-bottom:18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--gold);
+    letter-spacing:0.04em;
+    margin-bottom:16px;
   }
   .hero h1{
-    font-size:56px;
-    line-height:1.06;
-    margin-bottom:22px;
-  }
-  .hero h1 em{
-    font-style:italic;
-    color:var(--moss-deep);
+    font-size:42px;
+    font-weight:600;
+    margin-bottom:10px;
+    max-width:640px;
   }
   .hero p.lede{
-    font-size:18px;
     color:var(--ink-soft);
-    max-width:480px;
+    font-size:16px;
+    max-width:560px;
     margin-bottom:34px;
   }
  
-  .search-card{
-    background:var(--paper-raised);
-    border:1px solid var(--line);
-    border-radius:6px;
-    padding:8px;
-    display:flex;
-    gap:8px;
-    box-shadow:0 1px 0 var(--line);
-  }
-  .search-card input, .search-card select{
-    border:none;
-    background:transparent;
-    font-family:'Inter', sans-serif;
-    font-size:15px;
-    padding:12px 14px;
-    outline:none;
-    color:var(--ink);
-  }
-  .search-card input{flex:1.4; border-right:1px solid var(--line);}
-  .search-card select{flex:1;}
-  .search-card button{
-    background:var(--clay);
-    color:#fff;
-    border:none;
-    padding:0 26px;
-    border-radius:4px;
-    font-weight:600;
-    font-size:14.5px;
-    cursor:pointer;
-  }
-  .hero-tags{
-    margin-top:16px;
-    font-size:13.5px;
-    color:var(--ink-soft);
-  }
-  .hero-tags span{
-    border-bottom:1px dotted var(--line);
-    padding-bottom:1px;
-    margin-right:14px;
-    cursor:pointer;
-  }
- 
-  /* Hero visual: a stat panel grounded in the recommendation idea */
-  .match-panel{
-    background:var(--ink);
-    border-radius:8px;
-    padding:32px;
-    color:#F1EFE8;
-    position:relative;
-    overflow:hidden;
-  }
-  .match-panel::before{
-    content:"";
-    position:absolute;
-    right:-60px; top:-60px;
-    width:220px; height:220px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(60,110,82,.55), transparent 70%);
-  }
-  .match-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 0;
-    border-bottom:1px solid rgba(255,255,255,.12);
-    position:relative;
-  }
-  .match-row:last-child{border-bottom:none;}
-  .match-role{font-size:15px; font-weight:500;}
-  .match-co{font-size:12.5px; color:#B9B6AC;}
-  .match-score{
-    font-family:'Fraunces', serif;
-    font-size:20px;
-    color:#8FC9A6;
-  }
-  .match-caption{
-    margin-top:20px;
-    font-size:13px;
-    color:#B9B6AC;
-    position:relative;
-  }
- 
-  /* ---------- Section shared ---------- */
-  section{padding:84px 0;}
-  .section-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    margin-bottom:44px;
-    gap:24px;
-    border-bottom:1px solid var(--line);
-    padding-bottom:22px;
-  }
-  .section-head h2{font-size:32px;}
-  .section-head p{color:var(--ink-soft); max-width:380px; font-size:15px;}
- 
-  /* ---------- How it works ---------- */
-  .steps{
+  .info-strip{
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:0;
+    grid-template-columns:repeat(4, 1fr);
     border:1px solid var(--line);
-    border-radius:6px;
+    border-radius:var(--radius);
     overflow:hidden;
+    background:var(--panel);
   }
-  .step{
-    padding:34px 30px;
+  .info-cell{
+    padding:18px 20px;
     border-right:1px solid var(--line);
-    background:var(--paper-raised);
   }
-  .step:last-child{border-right:none;}
-  .step-index{
-    font-family:'Fraunces', serif;
-    font-size:14px;
-    color:var(--clay);
-    margin-bottom:14px;
-  }
-  .step h3{font-size:19px; margin-bottom:10px; font-weight:500;}
-  .step p{font-size:14.5px; color:var(--ink-soft);}
- 
-  /* ---------- Featured jobs ---------- */
-  .filters{
-    display:flex;
-    gap:10px;
-    margin-bottom:30px;
-    flex-wrap:wrap;
-  }
-  .chip{
-    padding:8px 16px;
-    border:1px solid var(--line);
-    border-radius:20px;
-    font-size:13.5px;
-    cursor:pointer;
-    background:var(--paper-raised);
+  .info-cell:last-child{border-right:none;}
+  .info-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
     color:var(--ink-soft);
-    transition:all .15s;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:6px;
   }
-  .chip.active{
-    background:var(--ink);
-    color:#fff;
-    border-color:var(--ink);
-  }
+  .info-value{font-size:14.5px; font-weight:600;}
  
-  .job-list{
-    display:flex;
-    flex-direction:column;
-    border:1px solid var(--line);
-    border-radius:6px;
-    overflow:hidden;
-  }
-  .job-row{
-    display:grid;
-    grid-template-columns:1fr auto auto auto;
-    gap:20px;
-    align-items:center;
-    padding:22px 26px;
-    background:var(--paper-raised);
+  /* ---------- Documents ---------- */
+  .docs-section{padding:20px 0 70px;}
+  .section-head{
+    margin-bottom:26px;
+    padding-bottom:16px;
     border-bottom:1px solid var(--line);
-    transition:background .15s;
   }
-  .job-row:last-child{border-bottom:none;}
-  .job-row:hover{background:#FBFAF6;}
-  .job-title{font-size:16.5px; font-weight:500;}
-  .job-meta{font-size:13px; color:var(--ink-soft); margin-top:4px;}
-  .job-tag{
-    font-size:12px;
-    color:var(--moss-deep);
-    background:#E7EFE9;
-    padding:5px 11px;
-    border-radius:20px;
-    white-space:nowrap;
-  }
-  .job-fit{
-    font-family:'Fraunces', serif;
-    font-size:15px;
-    color:var(--clay);
-    white-space:nowrap;
-  }
-  .job-apply{
-    font-size:13.5px;
-    font-weight:600;
-    color:var(--ink);
-    border:1px solid var(--line);
-    padding:9px 18px;
-    border-radius:4px;
-    white-space:nowrap;
-    cursor:pointer;
-  }
-  .job-apply:hover{border-color:var(--ink);}
-  .empty-state{
-    padding:40px 26px;
-    text-align:center;
-    color:var(--ink-soft);
-    font-size:14.5px;
-    background:var(--paper-raised);
-  }
+  .section-head h2{font-size:24px; font-weight:600;}
+  .section-head p{color:var(--ink-soft); font-size:14.5px; margin-top:6px;}
  
-  /* ---------- Employers strip ---------- */
-  .employer-band{
-    background:var(--ink);
-    color:#F1EFE8;
-  }
-  .employer-grid{
+  .doc-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
+    gap:16px;
   }
-  .employer-grid h2{color:#F1EFE8; font-size:30px; margin-bottom:16px;}
-  .employer-grid p{color:#B9B6AC; font-size:15px; margin-bottom:26px; max-width:420px;}
-  .employer-list{list-style:none; font-size:14.5px;}
-  .employer-list li{
-    padding:14px 0;
-    border-top:1px solid rgba(255,255,255,.14);
+  .doc-card{
     display:flex;
-    gap:14px;
+    align-items:center;
+    gap:18px;
+    padding:22px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    transition:border-color .15s, transform .12s;
   }
-  .employer-list li:last-child{border-bottom:1px solid rgba(255,255,255,.14);}
-  .employer-list b{color:#F1EFE8; font-weight:500;}
-  .employer-list span{color:#9C998E;}
+  .doc-card:hover{
+    border-color:var(--gold);
+    transform:translateY(-2px);
+  }
+  .doc-icon{
+    width:46px; height:46px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    font-weight:600;
+    flex-shrink:0;
+  }
+  .icon-pdf{background:#FBEAE5; color:#B84A32;}
+  .icon-ppt{background:#FBEAE5; color:#C1522F;}
+  .icon-img{background:var(--gold-soft); color:var(--gold);}
+ 
+  .doc-body{flex:1;}
+  .doc-title{font-size:15.5px; font-weight:600; margin-bottom:3px;}
+  .doc-desc{font-size:13px; color:var(--ink-soft);}
+  .doc-arrow{
+    font-size:18px;
+    color:var(--ink-soft);
+    transition:transform .15s, color .15s;
+  }
+  .doc-card:hover .doc-arrow{color:var(--gold); transform:translateX(3px);}
+ 
+  /* ---------- Repo section ---------- */
+  .repo-band{
+    background:var(--navy);
+    color:#EDEAE0;
+    padding:44px 0;
+  }
+  .repo-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .repo-row h3{font-size:19px; font-weight:600; margin-bottom:6px;}
+  .repo-row p{color:#B9BAC6; font-size:14px; max-width:420px;}
+  .repo-btn{
+    padding:12px 24px;
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:700;
+    font-size:14px;
+    border-radius:var(--radius);
+    white-space:nowrap;
+  }
+  .repo-btn:hover{background:#CDA05C;}
  
   /* ---------- Footer ---------- */
-  footer{
-    border-top:1px solid var(--line);
-    padding:40px 0;
-  }
+  footer{padding:30px 0;}
   .footer-row{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    font-size:13.5px;
+    font-size:13px;
     color:var(--ink-soft);
   }
-  .footer-row a{margin-left:22px; color:var(--ink-soft);}
-  .footer-row a:hover{color:var(--ink);}
  
-  @media (max-width: 860px){
-    .hero-grid, .employer-grid{grid-template-columns:1fr;}
-    .hero h1{font-size:38px;}
-    .steps{grid-template-columns:1fr;}
-    .step{border-right:none; border-bottom:1px solid var(--line);}
-    .step:last-child{border-bottom:none;}
-    .job-row{grid-template-columns:1fr; gap:10px;}
-    nav{display:none;}
-    .search-card{flex-direction:column;}
-    .search-card input{border-right:none; border-bottom:1px solid var(--line);}
+  @media (max-width: 700px){
+    .hero h1{font-size:30px;}
+    .info-strip{grid-template-columns:1fr 1fr;}
+    .info-cell:nth-child(2){border-right:none;}
+    .info-cell{border-bottom:1px solid var(--line);}
+    .doc-grid{grid-template-columns:1fr;}
+    .repo-row{flex-direction:column; align-items:flex-start;}
   }
 </style>
 </head>
 <body>
  
 <header>
-  <div class="header-row">
-    <div class="logo"><span class="logo-mark"></span>Setu</div>
-    <nav>
-      <a href="#browse">Browse jobs</a>
-      <a href="#how">How it works</a>
-      <a href="#employers">For employers</a>
-    </nav>
-    <div class="header-actions">
-      <a class="btn btn-ghost" href="#">Log in</a>
-      <a class="btn btn-primary" href="#">Post a job</a>
-    </div>
+  <div class="wrap header-row">
+    <div class="brand"><b>ANJALI TIWARI</b> / SUMMER INTERNSHIP DOCUMENTATION</div>
+    <div class="status-pill">● Submission complete</div>
   </div>
 </header>
  
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">A JOB PORTAL BUILT AROUND FIT</div>
-      <h1>Apply less.<br><em>Match</em> more.</h1>
-      <p class="lede">Setu reads your skills and experience, then surfaces the roles worth your time — instead of another feed to scroll through.</p>
+  <div class="wrap">
+    <div class="eyebrow">IILM UNIVERSITY · COMPUTER SCIENCE & ENGINEERING</div>
+    <h1 class="serif">AI Placement System — Internship Portfolio</h1>
+    <p class="lede">Official internship report, presentation, and certification submitted for the 7th Semester curriculum requirement, completed at DigiSamaksh Private Limited.</p>
  
-      <div class="search-card">
-        <input id="searchInput" type="text" placeholder="Job title or skill — e.g. Node.js, UI design">
-        <select id="locationInput">
-          <option value="">Any location</option>
-          <option>Remote</option>
-          <option>Noida</option>
-          <option>Bengaluru</option>
-          <option>Gurugram</option>
-        </select>
-        <button onclick="scrollToJobs()">Search</button>
+    <div class="info-strip">
+      <div class="info-cell">
+        <div class="info-label">Enrollment No.</div>
+        <div class="info-value">CS-23411036</div>
       </div>
-      <div class="hero-tags">
-        <span onclick="quickFilter('Frontend')">Frontend</span>
-        <span onclick="quickFilter('Backend')">Backend</span>
-        <span onclick="quickFilter('Data')">Data</span>
-        <span onclick="quickFilter('Design')">Design</span>
+      <div class="info-cell">
+        <div class="info-label">Semester / Section</div>
+        <div class="info-value">7th — 4CSE3</div>
       </div>
-    </div>
- 
-    <div class="match-panel">
-      <div class="match-row">
-        <div>
-          <div class="match-role">Backend Developer</div>
-          <div class="match-co">Kestrel Logistics · Gurugram</div>
-        </div>
-        <div class="match-score">94%</div>
+      <div class="info-cell">
+        <div class="info-label">Organization</div>
+        <div class="info-value">DigiSamaksh Pvt. Ltd.</div>
       </div>
-      <div class="match-row">
-        <div>
-          <div class="match-role">Node.js Engineer</div>
-          <div class="match-co">Whitepeak Tech · Remote</div>
-        </div>
-        <div class="match-score">89%</div>
+      <div class="info-cell">
+        <div class="info-label">Duration</div>
+        <div class="info-value">01 Jun – 15 Aug 2026</div>
       </div>
-      <div class="match-row">
-        <div>
-          <div class="match-role">Full-Stack Developer</div>
-          <div class="match-co">Solvaire Systems · Noida</div>
-        </div>
-        <div class="match-score">85%</div>
-      </div>
-      <p class="match-caption">Ranked against your profile — skills, experience level, and past searches.</p>
     </div>
   </div>
 </section>
  
-<section id="how">
+<section class="docs-section">
   <div class="wrap">
     <div class="section-head">
-      <h2>How the matching works</h2>
-      <p>No black box — here's what happens between your profile and your inbox.</p>
+      <h2 class="serif">Documents</h2>
+      <p>Click any item below to open it directly.</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-index">01</div>
-        <h3>Build your profile</h3>
-        <p>Add your skills, experience, and the kind of role you're after. Takes about four minutes.</p>
-      </div>
-      <div class="step">
-        <div class="step-index">02</div>
-        <h3>Get ranked recommendations</h3>
-        <p>Every open role is scored against your profile, so the strongest fits reach you first.</p>
-      </div>
-      <div class="step">
-        <div class="step-index">03</div>
-        <h3>Apply and track status</h3>
-        <p>Apply in a click, then watch your application move from Applied to Shortlisted in one dashboard.</p>
-      </div>
+ 
+    <div class="doc-grid">
+      <a class="doc-card" href="Anjali_Tiwari_Internship_Report.pdf" target="_blank" rel="noopener">
+        <div class="doc-icon icon-pdf">PDF</div>
+        <div class="doc-body">
+          <div class="doc-title">Internship Report</div>
+          <div class="doc-desc">Full technical documentation of the project</div>
+        </div>
+        <div class="doc-arrow">→</div>
+      </a>
+ 
+      <a class="doc-card" href="AI_Placement_System_Internship.pptx" target="_blank" rel="noopener">
+        <div class="doc-icon icon-ppt">PPT</div>
+        <div class="doc-body">
+          <div class="doc-title">Internship Presentation</div>
+          <div class="doc-desc">Slide deck summarizing the project & outcomes</div>
+        </div>
+        <div class="doc-arrow">→</div>
+      </a>
+ 
+      <a class="doc-card" href="digisamaksh_CompletionCertificate.jpg" target="_blank" rel="noopener">
+        <div class="doc-icon icon-img">JPG</div>
+        <div class="doc-body">
+          <div class="doc-title">Completion Certificate</div>
+          <div class="doc-desc">Issued by DigiSamaksh Private Limited</div>
+        </div>
+        <div class="doc-arrow">→</div>
+      </a>
+ 
+      <a class="doc-card" href="digisamaksh_OfferLetter.jpg" target="_blank" rel="noopener">
+        <div class="doc-icon icon-img">JPG</div>
+        <div class="doc-body">
+          <div class="doc-title">Offer Letter</div>
+          <div class="doc-desc">Internship offer from DigiSamaksh Private Limited</div>
+        </div>
+        <div class="doc-arrow">→</div>
+      </a>
     </div>
   </div>
 </section>
  
-<section id="browse">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Open roles</h2>
-      <p>Filtered live as you type or tap a category.</p>
-    </div>
- 
-    <div class="filters" id="filterChips">
-      <div class="chip active" data-cat="All">All roles</div>
-      <div class="chip" data-cat="Frontend">Frontend</div>
-      <div class="chip" data-cat="Backend">Backend</div>
-      <div class="chip" data-cat="Data">Data</div>
-      <div class="chip" data-cat="Design">Design</div>
-    </div>
- 
-    <div class="job-list" id="jobList"></div>
-  </div>
-</section>
- 
-<section id="employers" class="employer-band">
-  <div class="wrap employer-grid">
+<section class="repo-band">
+  <div class="wrap repo-row">
     <div>
-      <h2>Post once, meet fewer unqualified applicants</h2>
-      <p>Describe the role and the must-have skills. Setu ranks every applicant against that brief before you see the shortlist, so screening starts on candidate five, not candidate fifty.</p>
-      <a class="btn btn-primary" href="#">Post a job — it's free</a>
+      <h3 class="serif">Full source & README</h3>
+      <p>See the complete project write-up, tech stack, and repository structure.</p>
     </div>
-    <ul class="employer-list">
-      <li><b>Structured job posting</b> <span>— role, skills, salary band, location, in one form</span></li>
-      <li><b>Applicant ranking</b> <span>— sorted by fit before you open a single resume</span></li>
-      <li><b>Status pipeline</b> <span>— move candidates through Applied → Shortlisted → Hired</span></li>
-    </ul>
+    <a class="repo-btn" href="https://github.com/anjalitiwaric27-coder/4cse3_cs-23411036_7th" target="_blank" rel="noopener">View on GitHub</a>
   </div>
 </section>
  
 <footer>
   <div class="wrap footer-row">
-    <div>© 2026 Setu — Job Portal & Recommendation System</div>
-    <div>
-      <a href="#browse">Browse jobs</a>
-      <a href="#employers">For employers</a>
-      <a href="#how">How it works</a>
-    </div>
+    <div>© 2026 Anjali Tiwari · IILM University</div>
+    <div>anjali.tiwari.cs27@iilm.edu</div>
   </div>
 </footer>
- 
-<script>
-  const jobs = [
-    { title:"Frontend Developer", company:"Whitepeak Tech", location:"Remote", category:"Frontend", fit:92, tag:"Full-time" },
-    { title:"UI/UX Designer", company:"Solvaire Systems", location:"Noida", category:"Design", fit:88, tag:"Full-time" },
-    { title:"Node.js Backend Engineer", company:"Kestrel Logistics", location:"Gurugram", category:"Backend", fit:94, tag:"Full-time" },
-    { title:"Data Analyst", company:"Marrow Analytics", location:"Remote", category:"Data", fit:81, tag:"Contract" },
-    { title:"React Developer", company:"Bramblewood Labs", location:"Bengaluru", category:"Frontend", fit:90, tag:"Full-time" },
-    { title:"MySQL Database Engineer", company:"Kestrel Logistics", location:"Noida", category:"Backend", fit:86, tag:"Full-time" },
-    { title:"Product Designer", company:"Solvaire Systems", location:"Remote", category:"Design", fit:83, tag:"Internship" },
-    { title:"Data Engineer", company:"Marrow Analytics", location:"Gurugram", category:"Data", fit:79, tag:"Full-time" }
-  ];
- 
-  let activeCategory = "All";
-  let activeSearch = "";
-  let activeLocation = "";
- 
-  const jobList = document.getElementById('jobList');
-  const searchInput = document.getElementById('searchInput');
-  const locationInput = document.getElementById('locationInput');
-  const filterChips = document.getElementById('filterChips');
- 
-  function renderJobs(){
-    const filtered = jobs.filter(job => {
-      const matchesCategory = activeCategory === "All" || job.category === activeCategory;
-      const matchesSearch = job.title.toLowerCase().includes(activeSearch.toLowerCase()) ||
-                             job.category.toLowerCase().includes(activeSearch.toLowerCase());
-      const matchesLocation = !activeLocation || job.location === activeLocation;
-      return matchesCategory && matchesSearch && matchesLocation;
-    });
- 
-    if(filtered.length === 0){
-      jobList.innerHTML = '<div class="empty-state">No roles match that search yet — try a broader term or clear the location filter.</div>';
-      return;
-    }
- 
-    jobList.innerHTML = filtered.map(job => `
-      <div class="job-row">
-        <div>
-          <div class="job-title">${job.title}</div>
-          <div class="job-meta">${job.company} · ${job.location}</div>
-        </div>
-        <div class="job-tag">${job.tag}</div>
-        <div class="job-fit">${job.fit}% fit</div>
-        <div class="job-apply">Apply</div>
-      </div>
-    `).join('');
-  }
- 
-  filterChips.addEventListener('click', (e) => {
-    if(!e.target.classList.contains('chip')) return;
-    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-    e.target.classList.add('active');
-    activeCategory = e.target.dataset.cat;
-    renderJobs();
-  });
- 
-  searchInput.addEventListener('input', (e) => {
-    activeSearch = e.target.value;
-    renderJobs();
-  });
- 
-  locationInput.addEventListener('change', (e) => {
-    activeLocation = e.target.value;
-    renderJobs();
-  });
- 
-  function scrollToJobs(){
-    document.getElementById('browse').scrollIntoView({behavior:'smooth'});
-  }
- 
-  function quickFilter(cat){
-    activeCategory = cat;
-    document.querySelectorAll('.chip').forEach(c => {
-      c.classList.toggle('active', c.dataset.cat === cat);
-    });
-    renderJobs();
-    scrollToJobs();
-  }
- 
-  renderJobs();
-</script>
  
 </body>
 </html>
